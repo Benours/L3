@@ -1,0 +1,43 @@
+body {background-color: rgb(230, 160, 250, 1);}
+
+header, footer {
+	position: fixed;
+	width: 100%;
+	text-align: center;
+	font-size: 15px;
+	color: rgb(250, 230, 160);  
+	background-color: red;
+	opacity: 1;
+	z-index: 1;
+}
+header {top: 0px;}
+footer {bottom: 0px;}
+
+nav {
+	font-size: 15px;
+	text-align: center;
+	font-variant-caps: small-caps; 
+	margin-bottom: 100px;
+}
+li	{display: inline-block;}
+
+div {
+	margin-top: 250px;
+	margin-bottom: 250px;
+	margin-left: 200px;
+}
+
+section {
+	position: relative;
+	margin-top: 20px;
+	border: 1px solid; 
+}
+
+form {
+	text-align: center;
+	line-height: 40px;
+	padding: 3px;
+	margin-top: 250px;
+	margin-bottom: 250px;
+	border: 1px solid; 
+}

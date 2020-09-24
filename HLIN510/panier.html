@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8" />
+	<!-- <meta charset="iso-latin-1" / -->
+	<link rel="stylesheet" type="text/css" href="messtyles.css">
+
+	<title>panier</title>
+</head>
+<body>
+	<header>
+		<h1>PANIER</h1>
+		<nav><a href="e-com.html">retour</a></nav>
+	</header>
+	<form>
+		<label for="qdd">Quantite</label> <input type="number" name="qdd" min="0" max="10">
+		<select>
+			<option>disque a++</option>
+			<option>disque b</option>
+			<option>disque c</option>
+		</select> <br/>
+
+		<label>Logitech</label>
+		<input type="checkbox" name="cs">
+		<label>Corsair</label>
+		<input type="checkbox" name="cs">
+		<label>Razer</label>
+		<input type="checkbox" name="cs"> <br>
+
+		<label>Stickers</label>
+		<input type="radio" name="rd">
+		<label>Ecran LCD 12548K</label>
+		<input type="radio" name="rd">
+		<label>RAM 4x64Go</label>
+		<input type="radio" name="rd"> <br>
+
+		<label>Adresse mail :</label>
+		<input type="email" name="mm" required=""> <br>
+
+		<label>Nom</label>
+		<input type="text" name="" pattern="[A-Z]+" required=""> <br>
+
+		<input type="submit" name="cs">
+	</form>
+</body>
+</html>
