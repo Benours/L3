@@ -34,32 +34,42 @@ void graphRandom(int n, int m, int edge[][2]){
 
 void composante(int n, int m, int edge[][2], int comp[]){
 	int aux;
+	vector<int> T[n];
 	for (int i = 0; i < n; i++){
 		comp[i] = i;
+		T[i].push_back(i);
 	}
 
 	/*printf("Composante avant :\n");
 	for (int i = 0; i < n; i++){
 		printf("%i\n", comp[i]);
 	}*/
-	
+	int a;
+	int b;
+	int ech;
 	for (int j = 0; j < m; j++){
+		a = comp[edge[j][0]];
+		b = comp[edge[j][1]];
 		if (comp[edge[j][0]] != comp[edge[j][1]]){
-			aux = comp[edge[j][0]];
-			for (int k = 0; k < n; k++){
-				if (comp[k] == aux){
-					comp[k] = comp[edge[j][1]];
+		int i = 0;	
+			if (T[a].size() < T[b].size()){
+				while (T[a].size() != 0){
+					ech = T[a][i];
+					T[b].push_back(ech);
+					a = b;
+					i++;
+					T[a].pop_back();
 				}
 			}
 		}
 	}
 	
-	/*printf("Composante apres :\n");
+	printf("Composante apres :\n");
 	for (int i = 0; i < n; i++){
 		printf("%i - ", comp[i]);
 	}
 	printf("\n");
-	*/
+	
 }
 
 void ecritureTailles(int n, int m, int comp[]){
