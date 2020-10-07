@@ -1,3 +1,6 @@
+<?php 
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <meta charset="utf-8">
@@ -13,14 +16,35 @@
 		<p>contenu du site blablabla</p>
 	</div>
 
-	<form method="post" action="bonjour.php">
-		<input type="text" name="nom" placeholder="NOM" pattern="[A-Z]*" required>
-		<input type="text" name="prenom" placeholder="Prenom" pattern="[A-Z][a-z].*" required>
-		<textarea name="message" rows="8" cols="44" placeholder="Ton message ici."></textarea><br>
-		<input type="submit" name="ok">		
-	</form>
+	<?php if (!isset($_POST['mdp']) or $_POST['mdp'] != "azerty")
+	{
+		?>
 
-	<?php include("piedpage.php"); ?>
+		<form method="post" action='mon_site.php'>
+			<input type='text' name='nom' placeholder='NOM' pattern='[A-Z]*' required>
+			<input type='text' name='prenom' placeholder='Prenom' pattern='[A-Z][a-z].*' required>
+			<br>
+			<input type='password' name='mdp' required>
+			<br>
+			<input type='submit' name='ok'>
+		</form>
+		<?php
+
+		$_SESSION['nom'] = $_POST['nom'];
+		$_SESSION['prenom'] = $_POST['prenom'];
+		
+	}
+	else {
+		?>
+
+		<div>
+			<p>Bonjour <?php echo $_SESSION['prenom'].' '.$_SESSION['nom']; ?> !</p>
+			<p>Voici ton message :</p>
+		</div>
+
+		<?php
+	}
+	include("piedpage.php"); ?>
 
 </body>
 </html>
