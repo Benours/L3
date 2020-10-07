@@ -30,16 +30,15 @@ session_start();
 		</form>
 		<?php
 
-		$_SESSION['nom'] = $_POST['nom'];
-		$_SESSION['prenom'] = $_POST['prenom'];
 		
 	}
 	else {
+		$_SESSION['nom'] = $_POST['nom'];
+		$_SESSION['prenom'] = $_POST['prenom'];
 		?>
 
 		<div>
 			<p>Bonjour <?php echo $_SESSION['prenom'].' '.$_SESSION['nom']; ?> !</p>
-			<p>Voici ton message :</p>
 		</div>
 
 		<?php
