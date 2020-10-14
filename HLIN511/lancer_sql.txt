@@ -1,0 +1,2 @@
+sqlplus e20150002138/azertyu@oracle.etu.umontpellier.fr:1524/plicence
+
