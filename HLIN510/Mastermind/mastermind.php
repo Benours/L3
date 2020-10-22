@@ -13,7 +13,7 @@ session_start();
 		$array = new Jeu();
 		$_SESSION['resultat'] = $array->getRes();
 	}
-	print_r($_SESSION['resultat']);
+	//print_r($_SESSION['resultat']);
 	?>
 	<form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
 		<input type="number" name="premier" min="0" max="9">
@@ -43,7 +43,6 @@ session_start();
 
 			if ($x == 4){
 				$_SESSION['resultat'] = null;
-				header('Location: mastermind.php');
 				echo "<script type='text/javascript'>alert('BIEN JOUE!'')</script>";
 				$x = 0;
 				$y = 0;
